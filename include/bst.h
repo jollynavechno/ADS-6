@@ -16,8 +16,8 @@ BST() :root(nullptr) {}
 void add(T data) {
 root = addNode(root, data);
 }
-int heigh() {
-return getHeigh(root) - 1;
+int depth() {
+return depthTree(root) - 1;
 }
 int search(T data) {
 return countNodes(root, data);
@@ -40,12 +40,12 @@ root->count++;
 }
 return root;
 }
-int getHeigh(Node* root) {
+int depthTree(Node* root) {
 if (root == nullptr)
 return 0;
 else {
-int lh = getHeigh(root->left);
-int rh = getHeigh(root->right);
+int lh = depthTree(root->left);
+int rh = depthTree(root->right);
 return ((lh > rh) ? lh : rh) + 1;
 }
 }
