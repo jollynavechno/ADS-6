@@ -41,9 +41,9 @@ root->count++;
 return root;
 }
 int depthTree(Node* root) {
-if (root == nullptr)
+if (root == nullptr) {
 return 0;
-else {
+} else {
 int lh = depthTree(root->left);
 int rh = depthTree(root->right);
 return ((lh > rh) ? lh : rh) + 1;
